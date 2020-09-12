@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Webpack Template</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="app">
+        <div class="stats">
+          <h3 class="stats__title">{{ 'Currently notes: ' + tasks.length }}</h3>
+        </div>
+        <div class="add_task">
+          <input type="text" v-model="new_task.title" placeholder="New note...">
+          <textarea v-model="new_task.desc" placeholder="Description"></textarea>
+          <button @click="add_task()" class="add_task-btn">Add notes</button>
+        </div>
+        <div class="notes">
+          <Task @task_done="delete_task(index)" :data="data" v-for="(data, index) in tasks" :key="index" />
+        </div>
+      </div>
+      <!-- end #app wrapper -->
+    </div>
+    <!-- end main wrapper -->
+  </body>
+</html>

@@ -1,0 +1,128 @@
+@import 'utils/libs';
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/fonts';
+@import 'utils/reset';
+
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  height: 100%;
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $tableWidth) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 14px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+.wrapper {
+  padding-top: 200px;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+
+  #app {
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 0;
+    width: 700px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid $border-lightex;
+    box-shadow: 0px 6px 24px $border-lighter;
+
+    .stats {
+      text-align: center;
+      color: $primary-color;
+      font-size: rem(20);
+      margin-bottom: 3rem;
+    }
+
+    .add_task {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3rem;
+
+      input, textarea {
+        border: 1px solid $border-lighter;
+        border-radius: 8px;
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 8px;
+        color: #000;
+
+        &::placeholder {
+          color: $neutral-secondary;
+        }
+
+        &:focus {
+          border-color: $primary-color;
+        }
+      }
+
+      button {
+        color: #fff;
+        background-color: $primary-color;
+        width: 130px;
+        height: 40px;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+    }
+
+    .notes {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+
+
+// Modules:
+// example: @import "modules/my-module.scss";
